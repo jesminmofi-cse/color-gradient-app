@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 const DB_URL = process.env.MONGO_URI;
 
 app.use(cors({
-  origin:"http://localhost:3000",
+  origin:"https://color-gradient-app.vercel.app/",
   credentials:true, 
 }));
 app.use(express.json()); 
