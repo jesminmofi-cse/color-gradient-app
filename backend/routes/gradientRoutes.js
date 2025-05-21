@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 
   try {
     const gradients = await Gradient.find({ user: userId }).sort({ createdAt: -1 });
-    res.json(gradients);
+    res.json({gradients});
   } catch (error) {
     console.error('❌ Error fetching gradients:', error);
     res.status(500).json({ msg: 'Server error' });
