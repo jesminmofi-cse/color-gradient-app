@@ -13,7 +13,7 @@ const History = ({ darkMode }) => {
         return;
       }
       try {
-        const response = await axios.get("https://color-gradient-app.onrender.com/api/history",
+        const response = await axios.get("https://color-gradient-app.onrender.com/api/gradients",
            {
             withCredentials: true,
         });
