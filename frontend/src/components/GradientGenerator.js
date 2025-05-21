@@ -16,12 +16,6 @@ const GradientGenerator = ({ darkMode }) => {
   const handleColor2Change = (e) => setColor2(e.target.value);
 
   const handleSave = async () => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      setMessage('Please login to save your gradient');
-      return;
-    }
-
     try {
       const response = await axios.post(
         'https://color-gradient-app.onrender.com/api/gradients',
@@ -41,9 +35,13 @@ const GradientGenerator = ({ darkMode }) => {
         setMessage('Failed to save gradient');
       }
     } catch (error) {
-      console.error('Error saving gradient:', error.response || error);
+      if (error.response && error.response.status === 401) {
+      setMessage('Please login to save your gradient');
+    } else {
       setMessage('Error saving gradient');
     }
+    console.error('Error saving gradient:', error.response || error);
+  }
   };
 
   const gradientStyle = {
