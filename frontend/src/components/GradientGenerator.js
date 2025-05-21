@@ -24,7 +24,7 @@ const GradientGenerator = ({ darkMode }) => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/gradients',
+        'https://color-gradient-app.onrender.com/api/gradients',
         {
           name: 'Custom Gradient',
           color1:color1,
