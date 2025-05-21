@@ -21,8 +21,8 @@ const GradientGenerator = ({ darkMode }) => {
         'https://color-gradient-app.onrender.com/api/gradients',
         {
           name: 'Custom Gradient',
-          color1:color1,
-          color2:color2,
+          color1: color1,
+          color2: color2,
         },
         {
           withCredentials: true,
@@ -35,17 +35,13 @@ const GradientGenerator = ({ darkMode }) => {
         setMessage('Failed to save gradient');
       }
     } catch (error) {
-      if (error.response) {
-        console.error('Server Error',error.response.status,error.response.data);
-        setMessage(error.response.data.msg || 'Please login to save your gradient');
-    } else if (error.request) {
-         console.error('❌ No response from server:', error.request);
-         setMessage('No response from server. Check CORS or session.');
+      if (error.response && error.response.status === 401) {
+        setMessage('Please login to save your gradient');
       } else {
-          console.error('❌ Error setting up the request:', error.message);
-          setMessage('Request setup error');
-    
-  }
+        setMessage('Error saving gradient');
+      }
+      console.error('Error saving gradient:', error.response || error);
+    }
   };
 
   const gradientStyle = {
