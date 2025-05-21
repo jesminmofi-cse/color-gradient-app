@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 
 // Add new gradient
 router.post('/', async (req, res) => {
-  const userId = req.session.user; // ✅ Read from session
+  const userId = req.user.id; // ✅ Read from session
   const { name, color1, color2 } = req.body;
 
   console.log('🎨 New Gradient Data:', req.body);
