@@ -1,0 +1,68 @@
+/* For both Login.css & Register.css */
+.register-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  padding: 20px;
+}
+
+.register-form {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+}
+
+.register-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.register-form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background-color: var(--input-bg);
+  color: var(--text);
+  font-size: 1rem;
+}
+.register-form button {
+  padding: 10px;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+ .register-form p {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.9rem;
+}
+.register-form p span {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+:root {
+  --card-bg: #fff;
+  --input-bg: #fff;
+  --border: #ccc;
+  --text: #000;
+}
+
+.dark {
+  --card-bg: #1e1e1e;
+  --input-bg: #2a2a2a;
+  --border: #555;
+  --text: #eee;
+}

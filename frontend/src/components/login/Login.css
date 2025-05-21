@@ -1,0 +1,74 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg);
+  transition: all 0.3s;
+}
+
+.login-form {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  color: var(--text);
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background-color: var(--input-bg);
+  color: var(--text);
+}
+
+.login-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-form p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-form p span {
+  color: teal;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+:root {
+  --bg: #f4f4f4;
+  --card-bg: #fff;
+  --input-bg: #fff;
+  --border: #ccc;
+  --text: #000;
+}
+
+.dark :root {
+  --bg: #121212;
+  --card-bg: #1e1e1e;
+  --input-bg: #2a2a2a;
+  --border: #555;
+  --text: #eee;
+}
+.dark .login-form {
+  background-color: var(--card-bg);
+  color: var(--text);
+}
