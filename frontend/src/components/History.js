@@ -19,7 +19,7 @@ const History = ({ darkMode }) => {
             withCredentials: true,
           
         });
-        setGradients(response.data);
+        setGradients(response.data.gradients);
       } catch (err) {
         console.error("❌ Error fetching gradient history:", err);
         setError("Failed to load gradient history. Please try again.");
