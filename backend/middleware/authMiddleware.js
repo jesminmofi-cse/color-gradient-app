@@ -1,12 +1,12 @@
 const User = require('../models/User');
 
 const protect = async (req, res, next) => {
-  if (!req.session || !req.session.user|| !req.session.user.id) {
+  if (!req.session || !req.session.user|| !req.session.user._id) {
     return res.status(401).json({ msg: 'Not authorized, no session' });
   }
 
   try {
-    const user = await User.findById(req.session.user.id).select('-password');
+    const user = await User.findById(req.session.user._id).select('-password');
     if (!user) {
       return res.status(401).json({ msg: 'Not authorized, user not found' });
     }
