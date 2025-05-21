@@ -12,12 +12,10 @@ const History = ({ darkMode }) => {
         setError("Please log in to view your saved gradients.");
         return;
       }
-
       try {
-        const response = await axios.get("https://color-gradient-app.onrender.com/api/gradients",
+        const response = await axios.get("https://color-gradient-app.onrender.com/api/history",
            {
             withCredentials: true,
-          
         });
         setGradients(response.data.gradients);
       } catch (err) {
