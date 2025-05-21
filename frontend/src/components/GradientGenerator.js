@@ -35,12 +35,8 @@ const GradientGenerator = ({ darkMode }) => {
         setMessage('Failed to save gradient');
       }
     } catch (error) {
-      if (error.response && error.response.status === 401) {
-        setMessage('Please login to save your gradient');
-      } else {
-        setMessage('Error saving gradient');
-      }
       console.error('Error saving gradient:', error.response || error);
+      setMessage('Error saving gradient');
     }
   };
 
